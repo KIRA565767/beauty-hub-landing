@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-label="Beauty Hub architectural placeholder">
+  <rect width="1600" height="1100" fill="#161618"/>
+  <path d="M0 760H1600V1100H0Z" fill="#222224"/>
+  <path d="M185 160H1415V835H185Z" fill="#222224" stroke="#8E8E93" stroke-opacity=".22" stroke-width="3"/>
+  <path d="M285 250H520V835H285ZM595 250H830V835H595ZM905 250H1140V835H905ZM1215 250H1315V835H1215Z" fill="#161618" stroke="#8E8E93" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M185 610H1415" stroke="#B87333" stroke-opacity=".5" stroke-width="4"/>
+  <path d="M1020 168L1415 168L1415 430" stroke="#C84B31" stroke-width="8"/>
+  <text x="220" y="940" fill="#8E8E93" font-family="monospace" font-size="42">ARCHITECTURAL PLACEHOLDER / BEAUTY HUB</text>
+</svg>

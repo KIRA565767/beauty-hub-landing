@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 920" role="img" aria-label="Client flow product cover placeholder">
+  <rect width="720" height="920" fill="#161618"/>
+  <path d="M0 0H720V920H0Z" fill="#222224"/>
+  <path d="M95 150H625V770H95Z" fill="none" stroke="#8E8E93" stroke-opacity=".24" stroke-width="2"/>
+  <path d="M95 310H625M95 470H625M95 630H625M235 150V770M375 150V770M515 150V770" stroke="#8E8E93" stroke-opacity=".16" stroke-width="2"/>
+  <path d="M118 654C204 512 312 552 382 404C442 276 540 300 608 206" fill="none" stroke="#B87333" stroke-width="7"/>
+  <circle cx="118" cy="654" r="15" fill="#C84B31"/>
+  <circle cx="382" cy="404" r="15" fill="#C84B31"/>
+  <circle cx="608" cy="206" r="15" fill="#C84B31"/>
+  <text x="96" y="805" fill="#EAEAEA" font-family="monospace" font-size="32">CLIENT FLOW</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Julia editorial portrait placeholder">
+  <rect width="900" height="1125" fill="#161618"/>
+  <path d="M95 90H805V1035H95Z" fill="#222224" stroke="#8E8E93" stroke-opacity=".22" stroke-width="3"/>
+  <circle cx="450" cy="360" r="135" fill="#8E8E93" fill-opacity=".32"/>
+  <path d="M260 880C280 650 345 535 450 535C555 535 620 650 640 880Z" fill="#8E8E93" fill-opacity=".24"/>
+  <path d="M95 788H805" stroke="#B87333" stroke-opacity=".64" stroke-width="4"/>
+  <text x="135" y="980" fill="#EAEAEA" font-family="monospace" font-size="34">PORTRAIT PLACEHOLDER</text>
+  <text x="135" y="1028" fill="#B87333" font-family="monospace" font-size="28">BLACK / WHITE EDITORIAL CROP</text>
+</svg>

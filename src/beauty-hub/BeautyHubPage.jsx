@@ -1,29 +1,28 @@
-import { DiagnosticFlow } from "./components/DiagnosticFlow";
-import { FAQ } from "./components/FAQ";
-import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
-import { ForNotFor } from "./components/ForNotFor";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { KnowledgeBaseIndex } from "./components/KnowledgeBaseIndex";
-import { PainMap } from "./components/PainMap";
-import { TelegramHub } from "./components/TelegramHub";
-import { WhatIsBeautyHub } from "./components/WhatIsBeautyHub";
+import { AuthoritySection } from "./components/sections/AuthoritySection";
+import { FinalConversionSection } from "./components/sections/FinalConversionSection";
+import { HeroSection } from "./components/sections/HeroSection";
+import { MarketRealitySection } from "./components/sections/MarketRealitySection";
+import { ProductSystemSection } from "./components/sections/ProductSystemSection";
+import { TelegramTerminalSection } from "./components/sections/TelegramTerminalSection";
+import { StickyCTA } from "./components/ui/StickyCTA";
+import { useHashScroll } from "./hooks/useHashScroll";
 
 export function BeautyHubPage() {
+  useHashScroll();
+
   return (
-    <main className="beauty-hub min-h-screen bg-[#15110D] text-[#F3EADF]">
+    <main className="beauty-hub min-h-screen bg-graphite text-dusty">
       <Header />
-      <Hero />
-      <WhatIsBeautyHub />
-      <PainMap />
-      <DiagnosticFlow />
-      <KnowledgeBaseIndex />
-      <TelegramHub />
-      <ForNotFor />
-      <FAQ />
-      <FinalCTA />
+      <HeroSection />
+      <MarketRealitySection />
+      <ProductSystemSection />
+      <AuthoritySection />
+      <TelegramTerminalSection />
+      <FinalConversionSection />
       <Footer />
+      <StickyCTA />
     </main>
   );
 }

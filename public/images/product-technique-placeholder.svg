@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 920" role="img" aria-label="Technique product cover placeholder">
+  <rect width="720" height="920" fill="#161618"/>
+  <path d="M70 76H650V844H70Z" fill="#222224" stroke="#8E8E93" stroke-opacity=".22" stroke-width="2"/>
+  <path d="M150 610C260 555 395 565 540 640" stroke="#EAEAEA" stroke-opacity=".38" stroke-width="26" stroke-linecap="round"/>
+  <path d="M190 332L550 720" stroke="#B87333" stroke-width="9"/>
+  <path d="M228 288L588 676" stroke="#8E8E93" stroke-opacity=".48" stroke-width="4"/>
+  <path d="M106 160H310M106 196H250" stroke="#C84B31" stroke-width="5"/>
+  <text x="96" y="805" fill="#EAEAEA" font-family="monospace" font-size="32">TECHNIQUE</text>
+</svg>
