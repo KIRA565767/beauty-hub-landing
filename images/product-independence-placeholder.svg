@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 920" role="img" aria-label="Independence product cover placeholder">
+  <rect width="720" height="920" fill="#161618"/>
+  <path d="M100 100H620V820H100Z" fill="#222224" stroke="#8E8E93" stroke-opacity=".2" stroke-width="2"/>
+  <path d="M230 820V270H510V820" fill="#161618" stroke="#8E8E93" stroke-opacity=".28" stroke-width="4"/>
+  <path d="M286 820V360H455V820" fill="#222224" stroke="#B87333" stroke-width="5"/>
+  <path d="M286 360L455 270V820H286Z" fill="#EAEAEA" fill-opacity=".08"/>
+  <path d="M455 270L590 215" stroke="#C84B31" stroke-width="8"/>
+  <text x="96" y="805" fill="#EAEAEA" font-family="monospace" font-size="32">INDEPENDENCE</text>
+</svg>
