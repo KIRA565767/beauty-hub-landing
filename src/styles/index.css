@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  color: #EAEAEA;
-  background: #161618;
+  color: #F3EADF;
+  background: #15110D;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,11 +22,12 @@ body,
   position: relative;
   min-height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {
-  background: #161618;
-  font-family: Inter, Manrope, ui-sans-serif, system-ui, sans-serif;
+  background: #15110D;
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
 button,
@@ -49,50 +50,38 @@ button:disabled {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(184, 115, 51, 0.7);
+  background: rgba(201, 130, 91, 0.72);
 }
 
 ::-webkit-scrollbar-track {
-  background: #161618;
+  background: #15110D;
 }
 
 .beauty-hub {
   position: relative;
   isolation: isolate;
   overflow-x: hidden;
-  background: #161618;
+  background: #15110D;
 }
 
 ::selection {
-  color: #161618;
-  background: #B87333;
+  color: #0B0907;
+  background: #C9825B;
 }
 
 .glass-header {
-  background: rgba(22, 22, 24, 0.68);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-}
-
-@supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
-  .glass-header {
-    background: #161618;
-  }
+  background: rgba(11, 9, 7, 0.96);
 }
 
 .editorial-concrete {
-  background-color: #222224;
-  background-image:
-    linear-gradient(90deg, rgba(234, 234, 234, 0.035) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(234, 234, 234, 0.03) 1px, transparent 1px);
-  background-size: 92px 92px;
+  background-color: #15110D;
+  background-image: url("../beauty-hub/assets/concrete-bg.jpg");
+  background-position: center top;
+  background-size: cover;
 }
 
 .hero-hard-light {
-  background:
-    linear-gradient(112deg, rgba(22, 22, 24, 0.94) 0%, rgba(22, 22, 24, 0.82) 48%, rgba(34, 34, 36, 0.94) 100%),
-    radial-gradient(circle at 74% 22%, rgba(200, 75, 49, 0.2), transparent 28%),
-    linear-gradient(135deg, #161618 0%, #222224 100%);
+  background: #0B0907;
 }
 
 .product-snap {
@@ -105,12 +94,16 @@ button:disabled {
 }
 
 .accent-marker {
-  font-size: 18pt;
+  font-size: 16pt;
   line-height: 1;
 }
 
 section[id] {
   scroll-margin-top: 64px;
+}
+
+.route-card {
+  scroll-margin-top: 88px;
 }
 
 summary::-webkit-details-marker {

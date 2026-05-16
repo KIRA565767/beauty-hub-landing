@@ -1,142 +1,206 @@
 export const meta = {
-  title: "Beauty Hub Юлии Кюнеберг — система роста для beauty-мастеров.",
-  description: "Техника, клиенты, выход из найма и наставничество в одной системе для мастеров beauty-сферы.",
+  title: "Beauty Hub Юлии Кюнеберг — стартовая диагностика beauty-мастера",
+  description:
+    "Beauty Hub помогает beauty-мастеру понять, какой узел сейчас тормозит рост: техника, клиенты, найм или отсутствие личной корректировки.",
 };
 
 export const brand = {
-  short: "BEAUTY HUB",
+  short: "Beauty Hub",
+  descriptor: "private beauty system / диагностика / маршруты",
 };
 
 export const navItems = [
-  { label: "01 / СТАРТ", href: "#top" },
-  { label: "02 / РЫНОК", href: "#market" },
-  { label: "03 / МАРШРУТЫ", href: "#products" },
-  { label: "04 / TELEGRAM", href: "#telegram" },
+  { label: "СТАРТ", href: "#top" },
+  { label: "РЫНОК", href: "#market" },
+  { label: "МАРШРУТЫ", href: "#products" },
+  { label: "ЮЛИЯ", href: "#authority" },
+  { label: "TELEGRAM", href: "#telegram" },
 ];
 
 export const hero = {
-  tag: "01 / BEAUTY HUB TERMINAL",
-  headline: "НЕ ЕЩЁ ОДИН БЬЮТИ-КУРС. А СИСТЕМА РОСТА.",
+  tag: "01 / 06 / Private Beauty System",
+  headline: "Что чинить первым в системе мастера",
   subheadline:
-    "Техника, клиенты, выход из найма и наставничество — в одной системе для beauty-мастеров, которые хотят системного развития, а не случайных советов.",
-  primaryCta: "ПЕРЕЙТИ В TELEGRAM →",
+    "Beauty Hub показывает не очередной курс, а слабый участок роста: техника, клиентский поток, самостоятельность или личная корректировка. Сначала диагностика, потом маршрут.",
+  primaryCta: "ПОЛУЧИТЬ СТАРТОВУЮ ДИАГНОСТИКУ",
   secondaryCta: "СМОТРЕТЬ МАРШРУТЫ",
-  terminalTitle: "PRIVATE SYSTEM",
-  terminalAction: "ENTER / BEAUTY HUB",
+  systemLine: "диагностика -> слабый узел -> маршрут -> Telegram",
 };
-
-export const routes = [
-  "01 / TECHNIQUE",
-  "02 / CLIENT FLOW",
-  "03 / INDEPENDENCE",
-  "04 / MENTORSHIP",
-];
 
 export const marketReality = {
-  tag: "02 / MARKET REALITY",
-  headline: "ХОРОШИЕ РАБОТЫ НЕ ГАРАНТИРУЮТ СИСТЕМНЫЙ РОСТ.",
-  marker: "DIAGNOSTICS COMPLETE",
-  systemLine: "NOT RANDOM. BUILD SYSTEM.",
-  bullets: [
-    "Клиенты идут рывками и нестабильно.",
-    "Сложно удерживать и повышать прайс.",
-    "Контент в профиле не ведёт к прямым записям.",
-    "Avito, Telegram, VK и Instagram используются фрагментарно.",
-    "Отсутствует понятный маршрут выхода из найма.",
-    "Мастер делает много действий, но не понимает, какой узел чинить первым.",
-  ],
+  tag: "02 / 06 / Market Reality",
+  headline: "Рост beauty-мастера ломается не в одном месте.",
+  copy:
+    "Если чинить всё подряд, система снова распадается на хаос. Beauty Hub ведёт через диагностику: сначала видно, какой узел держит рост, потом выбирается один маршрут.",
 };
 
+export const diagnosticNodes = [
+  {
+    number: "01",
+    title: "Техника",
+    anchor: "#route-technique",
+    short: "качество и точность",
+    symptom: "результат есть, но уверенности в системе работы не хватает",
+    breakdown: "техника, скорость, материалы и повторяемость результата требуют точной сборки.",
+    firstStep: "разобрать, где техника влияет на доверие, удержание и цену.",
+  },
+  {
+    number: "02",
+    title: "Клиентский поток",
+    anchor: "#route-client-flow",
+    short: "вход и запись",
+    symptom: "заявки есть рывками или диалог не доходит до записи",
+    breakdown: "профиль, оффер, переписка и первый контакт не собраны в понятный путь.",
+    firstStep: "найти точку, где внимание клиента сливается до записи.",
+  },
+  {
+    number: "03",
+    title: "Самостоятельность",
+    anchor: "#route-independence",
+    short: "выход из зависимости",
+    symptom: "хочется выйти из найма или чужой системы без хаоса",
+    breakdown: "нет маршрута перехода: финансы, запись, границы, позиционирование и риск смешаны.",
+    firstStep: "собрать аккуратный выход без резких движений и ложной смелости.",
+  },
+  {
+    number: "04",
+    title: "Личная корректировка",
+    anchor: "#route-mentorship",
+    short: "разбор маршрута",
+    symptom: "понятно, что что-то тормозит, но самой трудно увидеть главный узел",
+    breakdown: "нужен внешний взгляд на технику, упаковку, клиентов и порядок действий.",
+    firstStep: "зайти в разбор и определить, что чинить первым.",
+  },
+];
+
 export const productSystem = {
-  tag: "03 / ROUTE SYSTEM",
-  headline: "ЧЕТЫРЕ МАРШРУТА. ОДНА СИСТЕМА.",
-  note: "Каждый маршрут закрывает отдельный участок роста мастера: техника, клиентский поток, самостоятельность и сопровождение.",
-  products: [
-    {
-      label: "01 / TECHNIQUE",
-      title: "ТЕХНИКА МАНИКЮРА",
-      copy: "Для мастеров, которые хотят работать чище, быстрее и увереннее — без случайности в результате.",
-      cta: "ПОДРОБНЕЕ →",
-      imageSrc: "/images/product-technique-placeholder.svg",
-      imageAlt: "Плейсхолдер macro-визуала техники маникюра",
-      visualMode: "precision",
-    },
-    {
-      label: "02 / CLIENT FLOW",
-      title: "КЛИЕНТЫ И ПОТОК",
-      copy: "Про каналы, упаковку, Avito, контент и путь, по которому человек доходит до записи.",
-      cta: "СМОТРЕТЬ МАРШРУТ →",
-      imageSrc: "/images/product-client-flow-placeholder.svg",
-      imageAlt: "Плейсхолдер схемы клиентского потока",
-      visualMode: "route",
-    },
-    {
-      label: "03 / INDEPENDENCE",
-      title: "ВЫХОД ИЗ НАЙМА",
-      copy: "Для мастеров, которые хотят перестать зависеть от чужих правил и собрать свою систему работы.",
-      cta: "ОТКРЫТЬ МАРШРУТ →",
-      imageSrc: "/images/product-independence-placeholder.svg",
-      imageAlt: "Плейсхолдер архитектурного проёма для маршрута выхода из найма",
-      visualMode: "threshold",
-    },
-    {
-      label: "04 / MENTORSHIP",
-      title: "НАСТАВНИЧЕСТВО",
-      copy: "Для мастеров, которым нужен не ещё один материал, а движение с разбором, корректировкой и сопровождением.",
-      cta: "УЗНАТЬ БОЛЬШЕ →",
-      imageSrc: "/images/product-mentorship-placeholder.svg",
-      imageAlt: "Плейсхолдер private lounge для наставничества",
-      visualMode: "private",
-    },
-  ],
+  tag: "03 / 06 / Product Routes",
+  headline: "Четыре маршрута вместо хаотичного обучения.",
+  copy:
+    "Каждый маршрут ведёт к одному узлу системы. Выбор начинается не с обещания результата, а с честной диагностики текущей ситуации.",
+  diagnosticMessage:
+    "Один из этих узлов сейчас держит твой рост.\nВыбери маршрут, который ближе к твоей ситуации.",
+};
+
+export const productRoutes = [
+  // ROUTE: TECHNIQUE
+  // Purpose: техника как точность, скорость, чистота, контроль материалов, архитектура и качество.
+  // Old-site source: modules 1–5: workplace setup, material diagnostics, detachments/pre-burns, speed combi, hard materials.
+  // Do not: salon pink, stock manicure glam, cute icons.
+  {
+    id: "technique",
+    articleId: "route-technique",
+    source: "route_technique",
+    anchor: "#route-technique",
+    number: "01",
+    eyebrow: "TECHNIQUE",
+    title: "Техника и материалы",
+    text: "Для мастера, которому нужно разобрать точность работы, материалы, скорость, чистоту результата и уверенность в качестве.",
+    cta: "РАЗОБРАТЬ ТЕХНИКУ →",
+    image: "images/product-technique-placeholder.svg",
+  },
+  // ROUTE: CLIENT FLOW
+  // Purpose: клиентский поток как путь от видимости к записи.
+  // Old-site source: Avito module: profile packaging, ad photos, offer, price framing, messaging scripts, objections, negative review response.
+  // Do not: SaaS dashboard, fake metrics, traffic-hack hype.
+  {
+    id: "client-flow",
+    articleId: "route-client-flow",
+    source: "route_client_flow",
+    anchor: "#route-client-flow",
+    number: "02",
+    eyebrow: "CLIENT FLOW",
+    title: "Клиентский поток",
+    text: "Для ситуации, где просмотры, профиль, переписка или оффер не приводят к стабильной записи.",
+    cta: "НАЙТИ ТОЧКУ СЛИВА →",
+    image: "images/product-client-flow-placeholder.svg",
+  },
+  // ROUTE: INDEPENDENCE
+  // Purpose: выход из найма как переход из чужой системы в собственную профессиональную траекторию.
+  // Product substance: own cabinet, schedule, price, financial risk, client base, working conditions.
+  // Do not: girlboss clichés, beach laptop, motivational freedom imagery.
+  {
+    id: "independence",
+    articleId: "route-independence",
+    source: "route_independence",
+    anchor: "#route-independence",
+    number: "03",
+    eyebrow: "INDEPENDENCE",
+    title: "Выход из зависимости",
+    text: "Для мастера, который хочет выйти из найма, чужой сетки или хаотичного режима без резкого прыжка в пустоту.",
+    cta: "СОБРАТЬ ВЫХОД →",
+    image: "images/product-independence-placeholder.svg",
+  },
+  // ROUTE: MENTORSHIP
+  // Purpose: наставничество как диагностика, личная корректировка, сопровождение и контроль внедрения.
+  // Product substance: point A audit, route, video reviews, technique/client/price corrections, 5-month guidance.
+  // Do not: webinar coaching, smiling stock coach, influencer luxury.
+  {
+    id: "mentorship",
+    articleId: "route-mentorship",
+    source: "route_mentorship",
+    anchor: "#route-mentorship",
+    number: "04",
+    eyebrow: "MENTORSHIP",
+    title: "Личный разбор",
+    text: "Для тех, кому нужна личная корректировка маршрута: где сейчас главный узел и что делать первым.",
+    cta: "ПОЙТИ С РАЗБОРОМ →",
+    image: "images/product-mentorship-placeholder.svg",
+  },
+];
+
+export const terminalPanel = {
+  label: "Private access / route selector",
+  title: "Выбери узел без лишнего шума.",
+  text:
+    "Короткий слой навигации: техника, клиенты, самостоятельность или личный разбор.",
 };
 
 export const authority = {
-  tag: "05 / THE ARCHITECT",
-  anchor: "14 ЛЕТ ПРАКТИЧЕСКОГО ОПЫТА В ИНДУСТРИИ.",
-  headline: "BEAUTY HUB СОБРАН ВОКРУГ ПРАКТИКИ, РЫНКА И ВЗГЛЯДА ЮЛИИ НА БЬЮТИ-СФЕРУ",
-  copy:
-    "Это пространство создано практиком. Здесь техника, клиентский поток, цена, упаковка и самостоятельность собираются в рабочий механизм. Никакой воды — только инструменты и решения, проверенные рынком.",
-  imageSrc: "/images/julia-portrait-placeholder.svg",
-  imageAlt: "Чёрно-белый editorial-портрет Юлии, плейсхолдер",
-  placeholderLabel: "EDITORIAL PORTRAIT PLACEHOLDER",
+  tag: "04 / 06 / Authority",
+  headline: "Юлия Кюнеберг собирает маршрут как практик, а не как автор вебинара.",
+  lead:
+    "14 лет практики важны не сами по себе. В Beauty Hub этот опыт превращён в систему: что смотреть в работе мастера, где ломается рост и какой шаг делать первым.",
+  stat: "14 лет практики",
+  areas: [
+    "техника и материалы",
+    "клиентский поток и упаковка",
+    "личная корректировка и маршрут",
+  ],
 };
 
 export const telegram = {
-  tag: "06 / DELIVERY LAYER",
-  headline: "САЙТ ПОКАЗЫВАЕТ МАСШТАБ. TELEGRAM — ЭТО ГДЕ ПРОЕКТ ЖИВЁТ.",
-  copy: "Внутри — разборы, маршруты, материалы, наблюдения из практики и рабочие инструкции для мастеров.",
-  cta: "ВОЙТИ В TELEGRAM →",
-  terminalLabel: "PRIVATE ACCESS TERMINAL",
-  liveStatus: "LIVE",
-  feed: [
-    { status: "[LIVE]", title: "Разбор: почему профиль не ведёт к записи" },
-    { status: "[NEW]", title: "Как мастер теряет клиента ещё до цены" },
-    { status: "[ROUTE]", title: "Почему скорость без чистоты не продаёт дороже" },
-    { status: "[DIAGNOSTICS]", title: "Набор в сопровождение: скоро" },
+  tag: "05 / 06 / Telegram Private Access",
+  headline: "Стартовая диагностика начинается в Telegram.",
+  copy:
+    "После перехода в Telegram ты получишь стартовую диагностику: какой узел сейчас тормозит рост — техника, клиенты, найм или отсутствие личной корректировки.",
+  cta: "ПОЛУЧИТЬ СТАРТОВУЮ ДИАГНОСТИКУ →",
+  source: "telegram_terminal",
+  promise: [
+    "определить слабый узел",
+    "понять, почему он держит рост",
+    "выбрать первый маршрут без лишних разделов",
   ],
 };
 
 export const finalConversion = {
-  tag: "07 / FINAL CONVERSION",
-  headline: "ЗАХОДИ ВНУТРЬ BEAUTY HUB.",
-  subheadline: "Если ты хочешь расти не на случайных советах, а через систему — начни с входа в проект.",
-  cta: "ПЕРЕЙТИ В TELEGRAM →",
+  tag: "06 / 06 / Final CTA",
+  headline: "Не знаешь, какой узел чинить первым?",
+  subheadline:
+    "Начни со стартовой диагностики в Telegram. Она покажет ближайший маршрут без обещаний и без лишнего обучения.",
+  primaryCta: "ПОЛУЧИТЬ МАРШРУТ В TELEGRAM →",
+  source: "final_conversion",
 };
 
 export const footer = {
-  brand: "BEAUTY HUB",
-  descriptor: "SYSTEM FOR BEAUTY MASTERS",
-  microcopy: "BEAUTY HUB IS A SYSTEM, NOT A FEED.",
-  routesTitle: "ROUTES",
-  routes: [
-    { label: "TECHNIQUE", href: "#products" },
-    { label: "CLIENT FLOW", href: "#products" },
-    { label: "INDEPENDENCE", href: "#products" },
-    { label: "MENTORSHIP", href: "#products" },
-  ],
-  accessTitle: "TELEGRAM ACCESS",
-  accessCopy: "PRIVATE ACCESS FOR BEAUTY MASTERS.",
-  cta: "ВОЙТИ В TELEGRAM →",
-  bottomLine: "JULIA KYUNEBERG / 14 YEARS IN NAIL INDUSTRY / PRIVATE SYSTEM",
+  brand: "Beauty Hub Юлии Кюнеберг",
+  descriptor: "Private Beauty System для beauty-мастеров",
+  microcopy: "Сначала диагностика. Потом маршрут.",
+  routesTitle: "Навигация",
+  routes: navItems,
+  accessTitle: "Главный вход",
+  accessCopy: "Стартовая диагностика определяет, какой узел держит рост сейчас.",
+  cta: "ПОЛУЧИТЬ МАРШРУТ",
+  source: "footer",
+  bottomLine: "Beauty Hub / private beauty system / Julia Kyuneberg",
 };
