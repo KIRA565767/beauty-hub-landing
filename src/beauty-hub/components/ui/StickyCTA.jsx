@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { hero } from "../../content/landing";
-import { getTelegramStartLink } from "../../lib/telegramLinks";
 import { Button } from "./Button";
+import { getTelegramStartLink } from "../../lib/telegramLinks";
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,8 +24,9 @@ export function StickyCTA() {
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
         const productsVisible = productsRect.top < viewportHeight && productsRect.bottom > 80;
         const finalVisible = finalRect.top < viewportHeight && finalRect.bottom > 0;
+        const menuOpen = document.documentElement.dataset.mobileMenuOpen === "true";
 
-        setIsVisible(heroRect.bottom <= 80 && !productsVisible && !finalVisible);
+        setIsVisible(heroRect.bottom <= 80 && !productsVisible && !finalVisible && !menuOpen);
       });
     }
 
@@ -52,8 +52,8 @@ export function StickyCTA() {
       } transition duration-300`}
       style={{ bottom: "calc(20px + env(safe-area-inset-bottom))" }}
     >
-      <Button href={getTelegramStartLink("sticky_cta")} haptic className="w-full shadow-terminal">
-        {hero.primaryCta}
+      <Button href={getTelegramStartLink("sticky_cta")} haptic source="sticky_cta" className="w-full shadow-terminal">
+        ПОЛУЧИТЬ МАРШРУТ →
       </Button>
     </div>
   );

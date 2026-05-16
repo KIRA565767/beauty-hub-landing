@@ -1,7 +1,7 @@
-const BOT_URL = "#telegram";
+const FALLBACK_TELEGRAM_URL = "https://t.me/beautyhub_official_bot";
 
-export function getTelegramStartLink(source) {
-  if (BOT_URL.startsWith("#")) return BOT_URL;
+export const TELEGRAM_BASE_URL = import.meta.env.VITE_TELEGRAM_URL || FALLBACK_TELEGRAM_URL;
 
-  return `${BOT_URL}?start=${encodeURIComponent(source)}`;
+export function getTelegramStartLink(source = "site") {
+  return `${TELEGRAM_BASE_URL}?start=${encodeURIComponent(source)}`;
 }

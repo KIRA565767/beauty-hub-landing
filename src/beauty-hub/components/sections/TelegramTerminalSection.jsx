@@ -6,34 +6,41 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function TelegramTerminalSection() {
   return (
-    <section id="telegram" className="editorial-concrete px-4 py-20 text-dusty md:px-8 md:py-28 lg:px-10">
-      <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(420px,0.6fr)] lg:items-center">
+    <section id="telegram" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+      <div className="mx-auto grid max-w-[1320px] gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
         <Reveal>
           <SectionLabel>{telegram.tag}</SectionLabel>
-          <h2 className="mt-7 max-w-[900px] font-display text-4xl uppercase leading-none md:text-6xl lg:text-7xl">
+          <h2 className="mt-6 max-w-[860px] font-display text-4xl font-semibold leading-[1.02] md:text-6xl">
             {telegram.headline}
           </h2>
-          <p className="mt-7 max-w-[620px] text-base leading-8 text-mineral md:text-lg">
+          <p className="mt-6 max-w-[620px] text-base leading-8 text-mineral md:text-lg">
             {telegram.copy}
           </p>
-          <Button href={getTelegramStartLink("telegram_terminal")} haptic className="mt-9">
-            {telegram.cta}
-          </Button>
+
+          <div className="mt-9 border-y border-dusty/16 bg-warm/54 p-5 md:p-7">
+            <div className="mb-6 border-b border-dusty/10 pb-4 font-mono text-[10px] uppercase tracking-[0.16em] text-copper">
+              Private access / first step
+            </div>
+            <ul className="grid gap-4">
+              {telegram.promise.map((item, index) => (
+                <li key={item} className="grid grid-cols-[40px_1fr] gap-3 border-t border-dusty/10 pt-4 first:border-t-0 first:pt-0">
+                  <span className="font-mono text-xs text-copper">0{index + 1}</span>
+                  <span className="text-base leading-7 text-mineral">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
 
-        <Reveal delay={0.06} className="border border-copper/30 bg-graphite p-5 shadow-terminal md:p-7">
-          <div className="flex items-center justify-between gap-4 border-b border-dusty/10 pb-4 font-mono text-xs uppercase text-mineral">
-            <span>{telegram.terminalLabel}</span>
-            <span className="text-orange">{telegram.liveStatus}</span>
-          </div>
-          <div className="mt-6 divide-y divide-dusty/10">
-            {telegram.feed.map((item) => (
-              <article key={item.status} className="grid gap-3 py-5 sm:grid-cols-[128px_1fr]">
-                <span className="font-mono text-xs uppercase text-copper">{item.status}</span>
-                <h3 className="text-xl font-semibold uppercase leading-7 text-dusty">{item.title}</h3>
-              </article>
-            ))}
-          </div>
+        <Reveal delay={0.05} className="bg-ivory p-5 text-graphite md:p-7 lg:p-8">
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">Стартовая диагностика</p>
+          <h3 className="mt-6 font-display text-4xl font-semibold leading-none">Первый шаг без лишнего обучения.</h3>
+          <p className="mt-6 border-y border-graphite/14 py-6 text-lg leading-8">
+            {telegram.copy}
+          </p>
+          <Button href={getTelegramStartLink(telegram.source)} variant="dark" haptic source={telegram.source} className="mt-8">
+            {telegram.cta}
+          </Button>
         </Reveal>
       </div>
     </section>

@@ -1,32 +1,48 @@
-import { marketReality } from "../../content/landing";
+import { diagnosticNodes, marketReality } from "../../content/landing";
 import { Reveal } from "../ReferenceMotion";
 import { SectionLabel } from "../ui/SectionLabel";
 
 export function MarketRealitySection() {
   return (
-    <section id="market" className="editorial-concrete px-4 py-20 text-dusty md:px-8 md:py-28 lg:px-10">
-      <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(420px,0.65fr)] lg:items-start">
-        <Reveal>
+    <section id="market" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+      <div className="mx-auto max-w-[1400px]">
+        <Reveal className="mb-10 border-t border-dusty/18 pt-8">
           <SectionLabel>{marketReality.tag}</SectionLabel>
-          <h2 className="mt-7 max-w-[920px] font-display text-4xl uppercase leading-none md:text-6xl lg:text-7xl">
+          <h2 className="mt-6 max-w-[880px] font-display text-4xl font-semibold leading-[1.02] md:text-6xl">
             {marketReality.headline}
           </h2>
+          <p className="mt-6 max-w-[680px] text-base leading-8 text-mineral md:text-lg">{marketReality.copy}</p>
         </Reveal>
 
-        <Reveal delay={0.05} className="border-y border-dusty/14">
-          <div className="grid gap-2 border-b border-copper/35 py-4 font-mono text-xs uppercase text-orange sm:grid-cols-[1fr_auto]">
-            <span>{marketReality.marker}</span>
-            <span className="text-copper">{marketReality.systemLine}</span>
+        <div className="border-y border-dusty/16 bg-warm/48">
+          <div className="hidden grid-cols-[70px_210px_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.08fr)] border-b border-dusty/12 px-5 py-4 font-mono text-[10px] uppercase tracking-[0.16em] text-copper lg:grid">
+            <span>№</span>
+            <span>Узел</span>
+            <span>Симптом</span>
+            <span>Что ломается</span>
+            <span>Первый шаг</span>
           </div>
-          <ul className="divide-y divide-dusty/10">
-            {marketReality.bullets.map((item, index) => (
-              <li key={item} className="grid grid-cols-[42px_1fr] gap-4 py-5">
-                <span className="font-mono text-sm text-copper">{String(index + 1).padStart(2, "0")}</span>
-                <span className="text-base leading-7 text-dusty md:text-lg">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+          {diagnosticNodes.map((node, index) => (
+            <Reveal key={node.number} delay={index * 0.025}>
+              <article className="grid gap-5 border-b border-dusty/10 px-4 py-7 last:border-b-0 md:px-5 lg:grid-cols-[70px_210px_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.08fr)]">
+                <span className="font-mono text-sm text-copper">{node.number}</span>
+                <h3 className="font-display text-3xl font-semibold leading-none text-dusty">{node.title}</h3>
+                <div>
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-copper">Симптом</p>
+                  <p className="text-base leading-7 text-dusty">{node.symptom}</p>
+                </div>
+                <div>
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-copper">Что ломается</p>
+                  <p className="text-base leading-7 text-mineral">{node.breakdown}</p>
+                </div>
+                <div className="border-l border-copper pl-4">
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-copper">Первый шаг</p>
+                  <p className="text-base leading-7 text-dusty">{node.firstStep}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

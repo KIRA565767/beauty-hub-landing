@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1440px] border-t border-copper/20 pt-10">
         <div className="grid gap-8 md:grid-cols-[1fr_1fr_1fr] md:gap-10">
           <div>
-            <p className="font-display text-4xl uppercase leading-none text-dusty">{footer.brand}</p>
+            <p className="font-display text-4xl leading-none text-dusty">{footer.brand}</p>
             <p className="mt-3 font-mono text-xs uppercase text-copper">{footer.descriptor}</p>
             <p className="mt-8 max-w-[260px] font-mono text-xs uppercase leading-6 text-mineral">{footer.microcopy}</p>
           </div>
@@ -27,7 +27,7 @@ export function Footer() {
           <div className="font-mono text-xs uppercase md:justify-self-end md:text-right">
             <p className="text-copper">{footer.accessTitle}</p>
             <p className="mt-5 max-w-[260px] leading-6 text-mineral md:ml-auto">{footer.accessCopy}</p>
-            <Button href={getTelegramStartLink("footer")} variant="secondary" haptic className="mt-6">
+            <Button href={getTelegramStartLink(footer.source)} variant="secondary" haptic source={footer.source} className="mt-6">
               {footer.cta}
             </Button>
           </div>

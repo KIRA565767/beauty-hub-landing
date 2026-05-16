@@ -1,45 +1,40 @@
-import { useRef } from "react";
-import { productSystem } from "../../content/landing";
-import { useIntersectionActive } from "../../hooks/useIntersectionActive";
+import { productRoutes, productSystem } from "../../content/landing";
 import { Reveal } from "../ReferenceMotion";
 import { SectionLabel } from "../ui/SectionLabel";
+import { TerminalPanel } from "../ui/TerminalPanel";
 import { ProductCoverCard } from "./ProductCoverCard";
 
 export function ProductSystemSection() {
-  const carouselRef = useRef(null);
-  const { activeIndex, setItemRef } = useIntersectionActive(productSystem.products.length, {
-    rootRef: carouselRef,
-    threshold: 0.62,
-  });
-
   return (
-    <section id="products" className="overflow-hidden bg-dusty px-0 py-20 text-graphite md:px-8 md:py-28 lg:px-10">
+    <section id="products" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
-        <Reveal className="grid gap-7 px-4 md:px-0 lg:grid-cols-[minmax(0,0.85fr)_minmax(360px,0.45fr)] lg:items-end">
-          <div>
-            <SectionLabel tone="light">{productSystem.tag}</SectionLabel>
-            <h2 className="mt-7 max-w-[840px] font-display text-4xl uppercase leading-none md:text-6xl lg:text-7xl">
+        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+          <Reveal className="border-t border-dusty/18 pt-8">
+            <SectionLabel>{productSystem.tag}</SectionLabel>
+            <h2 className="mt-6 max-w-[860px] font-display text-4xl font-semibold leading-[1.02] md:text-6xl">
               {productSystem.headline}
             </h2>
-          </div>
-          <p className="max-w-[520px] text-base leading-8 text-concrete md:text-lg">
-            {productSystem.note}
-          </p>
+            <p className="mt-6 max-w-[680px] text-base leading-8 text-mineral md:text-lg">{productSystem.copy}</p>
+          </Reveal>
+          <Reveal delay={0.04}>
+            <TerminalPanel />
+          </Reveal>
+        </div>
+
+        <Reveal className="mt-10 max-w-[680px] border-l border-copper pl-4">
+          {productSystem.diagnosticMessage.split("\n").map((line) => (
+            <p key={line} className="font-display text-3xl font-semibold leading-tight text-dusty md:text-4xl">
+              {line}
+            </p>
+          ))}
         </Reveal>
 
-        <div
-          ref={carouselRef}
-          className="product-snap mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 2xl:grid-cols-4"
-        >
-          {productSystem.products.map((product, index) => (
-            <ProductCoverCard
-              key={product.label}
-              {...product}
-              index={index}
-              active={activeIndex === index}
-              setRef={setItemRef(index)}
-            />
-          ))}
+        <div className="-mx-4 mt-8 overflow-x-auto px-4 pb-4 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10 product-snap snap-x snap-mandatory">
+          <div className="flex gap-4 pr-4 md:gap-5 md:pr-8 lg:pr-10">
+            {productRoutes.map((route) => (
+              <ProductCoverCard key={route.id} route={route} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
