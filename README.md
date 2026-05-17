@@ -1,6 +1,29 @@
-# Beauty Hub Landing
+# Beauty Hub
 
-Landing page for Beauty Hub Юлии Кюнеберг, built as a Private Beauty System for beauty-master diagnostics and Telegram conversion.
+Multi-page private beauty project hub for Юлия Кюнеберг.
+
+Beauty Hub is built as a dark editorial route system for beauty masters:
+
+- homepage = entrance into the system;
+- routes = four rooms / directions;
+- Telegram = live project space;
+- Route Finder = optional helper when a user does not know where to start.
+
+## Visual Lock
+
+The approved visual direction is the current dark editorial grid layout with large typography, graphite/warm background, copper accents, route index panels and product route cards.
+
+Forbidden forever:
+
+- concrete photo backgrounds;
+- brutalist building photos;
+- architectural placeholders;
+- `london-brutal-neutral.jpg`;
+- `concrete-bg.jpg`;
+- diagnostic-first landing positioning;
+- old one-page diagnostic funnel.
+
+See `docs/VISUAL_LOCK.md` before making design or copy changes.
 
 ## Stack
 
@@ -36,6 +59,20 @@ Preview production build:
 npm run preview
 ```
 
+## Routes
+
+```text
+#/ 
+#/routes
+#/routes/technique
+#/routes/client-flow
+#/routes/independence
+#/routes/mentorship
+#/telegram
+#/julia
+#/start
+```
+
 ## Deploy
 
 Target: GitHub Pages
@@ -46,7 +83,7 @@ Preview URL: `https://kira565767.github.io/beauty-hub-landing/`
 
 ## Content
 
-Main landing content lives in:
+Main content lives in:
 
 `src/beauty-hub/content/landing.js`
 
