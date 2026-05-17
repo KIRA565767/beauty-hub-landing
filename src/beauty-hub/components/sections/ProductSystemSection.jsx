@@ -29,8 +29,8 @@ export function ProductSystemSection() {
           ))}
         </Reveal>
 
-        <div className="-mx-4 mt-8 overflow-x-auto px-4 pb-4 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10 product-snap snap-x snap-mandatory">
-          <div className="flex gap-4 pr-4 md:gap-5 md:pr-8 lg:pr-10">
+        <div className="product-snap -mx-4 mt-8 overflow-x-auto px-4 pb-4 snap-x snap-mandatory md:-mx-8 md:px-8 lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0">
+          <div className="flex gap-4 pr-4 md:gap-5 md:pr-8 lg:grid lg:grid-cols-2 lg:pr-0 xl:grid-cols-4">
             {productRoutes.map((route, index) => (
               <ProductCoverCard key={route.id} route={route} node={diagnosticNodes[index]} room={routeRooms[route.id]} />
             ))}
