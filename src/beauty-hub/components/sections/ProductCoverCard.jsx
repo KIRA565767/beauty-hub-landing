@@ -1,4 +1,3 @@
-import { getTelegramStartLink } from "../../lib/telegramLinks";
 import { Button } from "../ui/Button";
 
 export function ProductCoverCard({ route }) {
@@ -22,8 +21,8 @@ export function ProductCoverCard({ route }) {
         </div>
         <h3 className="mt-7 font-display text-4xl font-semibold leading-none text-dusty">{route.title}</h3>
         <p className="mt-5 text-base leading-7 text-mineral">{route.text}</p>
-        <Button href={getTelegramStartLink(route.source)} haptic source={route.source} variant="secondary" className="mt-7 w-full sm:w-auto">
-          {route.cta}
+        <Button href={route.path} source={`${route.source}_detail`} variant="secondary" className="mt-7 w-full sm:w-auto">
+          СМОТРЕТЬ МАРШРУТ →
         </Button>
       </div>
     </article>
