@@ -6,7 +6,7 @@ import { ProductCoverCard } from "./ProductCoverCard";
 
 export function ProductSystemSection() {
   return (
-    <section id="products" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+    <section id="products" className="editorial-concrete min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
           <Reveal className="border-t border-dusty/18 pt-8">
