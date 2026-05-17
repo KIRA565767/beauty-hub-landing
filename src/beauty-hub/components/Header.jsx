@@ -17,6 +17,7 @@ export function Header() {
 
   useEffect(() => {
     document.documentElement.dataset.mobileMenuOpen = isOpen ? "true" : "false";
+    window.dispatchEvent(new Event("beautyhub:mobile-menu"));
 
     return () => {
       delete document.documentElement.dataset.mobileMenuOpen;
@@ -32,7 +33,7 @@ export function Header() {
     >
       <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between gap-4 px-4 md:px-8 lg:px-10">
         <a
-          href="#top"
+          href="#/"
           onClick={closeMenu}
           className="font-display text-2xl leading-none text-dusty transition hover:text-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
         >

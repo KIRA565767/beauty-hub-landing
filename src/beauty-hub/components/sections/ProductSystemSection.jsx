@@ -1,4 +1,4 @@
-import { productRoutes, productSystem } from "../../content/landing";
+import { diagnosticNodes, productRoutes, productSystem, routeRooms } from "../../content/landing";
 import { Reveal } from "../ReferenceMotion";
 import { SectionLabel } from "../ui/SectionLabel";
 import { TerminalPanel } from "../ui/TerminalPanel";
@@ -6,7 +6,7 @@ import { ProductCoverCard } from "./ProductCoverCard";
 
 export function ProductSystemSection() {
   return (
-    <section id="products" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+    <section id="products" className="editorial-concrete min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
           <Reveal className="border-t border-dusty/18 pt-8">
@@ -29,10 +29,10 @@ export function ProductSystemSection() {
           ))}
         </Reveal>
 
-        <div className="-mx-4 mt-8 overflow-x-auto px-4 pb-4 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10 product-snap snap-x snap-mandatory">
-          <div className="flex gap-4 pr-4 md:gap-5 md:pr-8 lg:pr-10">
-            {productRoutes.map((route) => (
-              <ProductCoverCard key={route.id} route={route} />
+        <div className="product-snap -mx-4 mt-8 overflow-x-auto px-4 pb-4 snap-x snap-mandatory md:-mx-8 md:px-8 lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0">
+          <div className="flex gap-4 pr-4 md:gap-5 md:pr-8 lg:grid lg:grid-cols-2 lg:pr-0 xl:grid-cols-4">
+            {productRoutes.map((route, index) => (
+              <ProductCoverCard key={route.id} route={route} node={diagnosticNodes[index]} room={routeRooms[route.id]} />
             ))}
           </div>
         </div>

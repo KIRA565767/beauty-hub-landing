@@ -30,7 +30,7 @@ export function HeroSection() {
               <Button href={getTelegramStartLink("hero_primary")} haptic source="hero_primary">
                 {hero.primaryCta}
               </Button>
-              <Button href="#products" variant="secondary" source="hero_secondary">
+              <Button href="#/routes" variant="secondary" source="hero_secondary">
                 {hero.secondaryCta}
               </Button>
             </div>
@@ -38,7 +38,7 @@ export function HeroSection() {
 
           <div className="grid max-w-[820px] border-y border-dusty/16 bg-graphite/58 text-[11px] uppercase tracking-[0.14em] text-mineral sm:grid-cols-3">
             {diagnosticNodes.slice(0, 3).map((node) => (
-              <a key={node.number} href={node.anchor || "#products"} className="grid grid-cols-[38px_1fr] gap-3 border-b border-dusty/10 px-4 py-3 transition hover:text-copper sm:border-b-0 sm:border-r sm:border-dusty/10 sm:last:border-r-0">
+              <a key={node.number} href={node.path} className="grid grid-cols-[38px_1fr] gap-3 border-b border-dusty/10 px-4 py-3 transition hover:text-copper sm:border-b-0 sm:border-r sm:border-dusty/10 sm:last:border-r-0">
                 <span className="font-mono text-copper">{node.number}</span>
                 <span>{node.title}</span>
               </a>
@@ -48,11 +48,11 @@ export function HeroSection() {
 
         <Reveal delay={0.06} className="border border-dusty/16 bg-graphite/70">
           <div className="border-b border-dusty/12 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.16em] text-mineral">
-            Индекс системы / 04 узла
+            Индекс системы / 04 комнаты
           </div>
           <div className="divide-y divide-dusty/10">
             {diagnosticNodes.map((node) => (
-              <a key={node.number} href={node.anchor || "#products"} className="group grid min-h-14 grid-cols-[42px_1fr] gap-3 px-5 py-3 transition hover:bg-copper/10">
+              <a key={node.number} href={node.path} className="group grid min-h-14 grid-cols-[42px_1fr] gap-3 px-5 py-3 transition hover:bg-copper/10">
                 <span className="font-mono text-xs text-copper">{node.number}</span>
                 <span>
                   <span className="block font-display text-2xl font-semibold leading-none text-dusty group-hover:text-copper">{node.title}</span>
@@ -62,9 +62,9 @@ export function HeroSection() {
             ))}
           </div>
           <div className="border-t border-copper/45 bg-ivory p-4 text-graphite">
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">Стартовая диагностика</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">Route Finder</p>
             <p className="mt-4 text-sm leading-6">
-              Показывает, какой узел сейчас держит рост: техника, клиенты, найм или отсутствие личной корректировки.
+              Если не понимаешь, с чего начать — выбери ближайший маршрут через короткий помощник.
             </p>
           </div>
         </Reveal>

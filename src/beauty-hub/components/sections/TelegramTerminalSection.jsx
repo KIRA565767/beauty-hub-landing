@@ -6,7 +6,7 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function TelegramTerminalSection() {
   return (
-    <section id="telegram" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+    <section id="telegram" className="editorial-concrete min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
       <div className="mx-auto grid max-w-[1320px] gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
         <Reveal>
           <SectionLabel>{telegram.tag}</SectionLabel>
@@ -19,7 +19,7 @@ export function TelegramTerminalSection() {
 
           <div className="mt-9 border-y border-dusty/16 bg-warm/54 p-5 md:p-7">
             <div className="mb-6 border-b border-dusty/10 pb-4 font-mono text-[10px] uppercase tracking-[0.16em] text-copper">
-              Private access / first step
+              Private access / live space
             </div>
             <ul className="grid gap-4">
               {telegram.promise.map((item, index) => (
@@ -33,8 +33,8 @@ export function TelegramTerminalSection() {
         </Reveal>
 
         <Reveal delay={0.05} className="bg-ivory p-5 text-graphite md:p-7 lg:p-8">
-          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">Стартовая диагностика</p>
-          <h3 className="mt-6 font-display text-4xl font-semibold leading-none">Первый шаг без лишнего обучения.</h3>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">Beauty Hub live room</p>
+          <h3 className="mt-6 font-display text-4xl font-semibold leading-none">Материалы, маршруты и рабочие инструкции внутри.</h3>
           <p className="mt-6 border-y border-graphite/14 py-6 text-lg leading-8">
             {telegram.copy}
           </p>

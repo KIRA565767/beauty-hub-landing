@@ -3,6 +3,8 @@ import { useEffect } from "react";
 export function useHashScroll() {
   useEffect(() => {
     function scrollToHash() {
+      if (window.location.hash.startsWith("#/")) return;
+
       const id = decodeURIComponent(window.location.hash.slice(1));
       if (!id) return;
 
