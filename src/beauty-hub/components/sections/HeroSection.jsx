@@ -1,4 +1,3 @@
-import londonBuilding from "../../assets/london-brutal-neutral.jpg";
 import { diagnosticNodes, hero } from "../../content/landing";
 import { getTelegramStartLink } from "../../lib/telegramLinks";
 import { Reveal } from "../ReferenceMotion";
@@ -7,13 +6,12 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function HeroSection() {
   return (
-    <section id="top" className="hero-hard-light relative isolate min-h-svh overflow-hidden px-4 pb-10 pt-24 text-dusty md:px-8 md:pt-28 lg:px-10">
-      <img
-        src={londonBuilding}
-        alt=""
-        className="absolute inset-0 z-0 h-full w-full object-cover object-[58%_50%] md:object-center"
-        loading="eager"
-      />
+    <section id="top" className="hero-hard-light relative isolate min-h-svh overflow-hidden bg-warm px-4 pb-10 pt-24 text-dusty md:px-8 md:pt-28 lg:px-10">
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgba(243,234,223,0.035)_1px,transparent_1px),linear-gradient(0deg,rgba(243,234,223,0.03)_1px,transparent_1px)] bg-[size:92px_92px]" />
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(118deg,rgba(11,9,7,0.98),rgba(21,17,13,0.92))]" />
+      <div className="absolute left-[12%] top-[46%] z-0 hidden font-mono text-[38px] uppercase tracking-[0.12em] text-dusty/[0.035] md:block lg:text-[44px]">
+        PRIVATE BEAUTY SYSTEM / ROUTE HALL
+      </div>
 
       <div className="relative z-10 mx-auto grid min-h-[calc(100svh-6rem)] max-w-[1440px] gap-5 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-end">
         <Reveal className="flex flex-col justify-end gap-5">
