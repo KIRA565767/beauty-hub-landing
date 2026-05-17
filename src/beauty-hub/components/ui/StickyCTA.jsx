@@ -7,26 +7,33 @@ export function StickyCTA() {
   const [hash, setHash] = useState(() => (typeof window === "undefined" ? "" : window.location.hash));
 
   useEffect(() => {
-    const heroNode = document.getElementById("top");
-    const productsNode = document.getElementById("products");
-    const finalNode = document.getElementById("final-conversion");
-    if (!heroNode || !productsNode || !finalNode) return undefined;
-
     let frame = 0;
 
     function sync() {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        setHash(window.location.hash);
-        const heroRect = heroNode.getBoundingClientRect();
-        const productsRect = productsNode.getBoundingClientRect();
-        const finalRect = finalNode.getBoundingClientRect();
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-        const productsVisible = productsRect.top < viewportHeight && productsRect.bottom > 80;
-        const finalVisible = finalRect.top < viewportHeight && finalRect.bottom > 0;
-        const menuOpen = document.documentElement.dataset.mobileMenuOpen === "true";
+        const nextHash = window.location.hash;
+        const heroNode = document.getElementById("top");
+        const productsNode = document.getElementById("products");
+        const finalNode = document.getElementById("final-conversion");
 
-        setIsVisible(heroRect.bottom <= 80 && !productsVisible && !finalVisible && !menuOpen);
+        setHash(nextHash);
+
+        if (!heroNode) {
+          setIsVisible(false);
+          return;
+        }
+
+        const heroRect = heroNode.getBoundingClientRect();
+        const productsRect = productsNode?.getBoundingClientRect();
+        const finalRect = finalNode?.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const productsVisible = productsRect ? productsRect.top < viewportHeight && productsRect.bottom > 80 : false;
+        const finalVisible = finalRect ? finalRect.top < viewportHeight && finalRect.bottom > 0 : false;
+        const menuOpen = document.documentElement.dataset.mobileMenuOpen === "true";
+        const routeBlocksSticky = nextHash.startsWith("#/routes") || nextHash === "#/start";
+
+        setIsVisible(heroRect.bottom <= 80 && !productsVisible && !finalVisible && !menuOpen && !routeBlocksSticky);
       });
     }
 
@@ -35,6 +42,7 @@ export function StickyCTA() {
     window.addEventListener("scroll", sync, { passive: true });
     window.addEventListener("resize", sync);
     window.addEventListener("hashchange", sync);
+    window.addEventListener("beautyhub:mobile-menu", sync);
 
     return () => {
       cancelAnimationFrame(frame);
@@ -42,6 +50,7 @@ export function StickyCTA() {
       window.removeEventListener("scroll", sync);
       window.removeEventListener("resize", sync);
       window.removeEventListener("hashchange", sync);
+      window.removeEventListener("beautyhub:mobile-menu", sync);
     };
   }, []);
 
