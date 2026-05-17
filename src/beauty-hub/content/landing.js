@@ -10,11 +10,11 @@ export const brand = {
 };
 
 export const navItems = [
-  { label: "СТАРТ", href: "#top" },
-  { label: "РЫНОК", href: "#market" },
-  { label: "МАРШРУТЫ", href: "#products" },
-  { label: "ЮЛИЯ", href: "#authority" },
-  { label: "TELEGRAM", href: "#telegram" },
+  { label: "СТАРТ", href: "#/" },
+  { label: "МАРШРУТЫ", href: "#/routes" },
+  { label: "ВЫБОР", href: "#/start" },
+  { label: "ЮЛИЯ", href: "#/julia" },
+  { label: "TELEGRAM", href: "#/telegram" },
 ];
 
 export const hero = {
@@ -39,6 +39,7 @@ export const diagnosticNodes = [
     number: "01",
     title: "Техника",
     anchor: "#route-technique",
+    path: "#/routes/technique",
     short: "качество и точность",
     symptom: "результат есть, но уверенности в системе работы не хватает",
     breakdown: "техника, скорость, материалы и повторяемость результата требуют точной сборки.",
@@ -48,6 +49,7 @@ export const diagnosticNodes = [
     number: "02",
     title: "Клиентский поток",
     anchor: "#route-client-flow",
+    path: "#/routes/client-flow",
     short: "вход и запись",
     symptom: "заявки есть рывками или диалог не доходит до записи",
     breakdown: "профиль, оффер, переписка и первый контакт не собраны в понятный путь.",
@@ -57,6 +59,7 @@ export const diagnosticNodes = [
     number: "03",
     title: "Самостоятельность",
     anchor: "#route-independence",
+    path: "#/routes/independence",
     short: "выход из зависимости",
     symptom: "хочется выйти из найма или чужой системы без хаоса",
     breakdown: "нет маршрута перехода: финансы, запись, границы, позиционирование и риск смешаны.",
@@ -66,6 +69,7 @@ export const diagnosticNodes = [
     number: "04",
     title: "Личная корректировка",
     anchor: "#route-mentorship",
+    path: "#/routes/mentorship",
     short: "разбор маршрута",
     symptom: "понятно, что что-то тормозит, но самой трудно увидеть главный узел",
     breakdown: "нужен внешний взгляд на технику, упаковку, клиентов и порядок действий.",
@@ -92,6 +96,7 @@ export const productRoutes = [
     articleId: "route-technique",
     source: "route_technique",
     anchor: "#route-technique",
+    path: "#/routes/technique",
     number: "01",
     eyebrow: "TECHNIQUE",
     title: "Техника и материалы",
@@ -108,6 +113,7 @@ export const productRoutes = [
     articleId: "route-client-flow",
     source: "route_client_flow",
     anchor: "#route-client-flow",
+    path: "#/routes/client-flow",
     number: "02",
     eyebrow: "CLIENT FLOW",
     title: "Клиентский поток",
@@ -124,6 +130,7 @@ export const productRoutes = [
     articleId: "route-independence",
     source: "route_independence",
     anchor: "#route-independence",
+    path: "#/routes/independence",
     number: "03",
     eyebrow: "INDEPENDENCE",
     title: "Выход из зависимости",
@@ -140,6 +147,7 @@ export const productRoutes = [
     articleId: "route-mentorship",
     source: "route_mentorship",
     anchor: "#route-mentorship",
+    path: "#/routes/mentorship",
     number: "04",
     eyebrow: "MENTORSHIP",
     title: "Личный разбор",
@@ -154,6 +162,48 @@ export const terminalPanel = {
   title: "Выбери узел без лишнего шума.",
   text:
     "Короткий слой навигации: техника, клиенты, самостоятельность или личный разбор.",
+};
+
+export const projectHub = {
+  tag: "Private Beauty System / входы",
+  headline: "Четыре входа в Private Beauty System.",
+  copy:
+    "Главная держит общий контекст. Дальше мастер выбирает маршрут, сверяет профессиональную основу проекта или сразу переходит к стартовому шагу в Telegram.",
+  entries: [
+    {
+      number: "01",
+      title: "Маршруты",
+      text: "Четыре направления роста: техника, клиенты, самостоятельность и личная корректировка.",
+      href: "#/routes",
+    },
+    {
+      number: "02",
+      title: "Старт",
+      text: "Короткий выбор ближайшего узла без отдельной диагностической воронки.",
+      href: "#/start",
+    },
+    {
+      number: "03",
+      title: "Юлия",
+      text: "Профессиональная база проекта и области, на которых держится маршрут.",
+      href: "#/julia",
+    },
+    {
+      number: "04",
+      title: "Telegram",
+      text: "Главный вход для стартового шага и получения маршрута.",
+      href: "#/telegram",
+    },
+  ],
+};
+
+export const startPage = {
+  tag: "Route finder / старт",
+  headline: "Выбери ближайший узел роста.",
+  copy:
+    "Это не отдельный продукт и не новая диагностика. Это стартовая навигация: один узел, один маршрут, один следующий шаг.",
+  cta: "ПОЛУЧИТЬ МАРШРУТ В TELEGRAM →",
+  source: "final_conversion",
 };
 
 export const authority = {
