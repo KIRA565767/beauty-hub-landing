@@ -6,7 +6,7 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function TelegramTerminalSection() {
   return (
-    <section id="telegram" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+    <section id="telegram" className="editorial-concrete min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
       <div className="mx-auto grid max-w-[1320px] gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
         <Reveal>
           <SectionLabel>{telegram.tag}</SectionLabel>
