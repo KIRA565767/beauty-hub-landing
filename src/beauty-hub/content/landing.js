@@ -34,7 +34,7 @@ export const marketReality = {
     "Если чинить всё подряд, система снова распадается на хаос. Beauty Hub собирает путь через направления: техника, клиентский поток, самостоятельность и личная корректировка. Сначала выбирается направление. Потом открывается маршрут.",
 };
 
-export const diagnosticNodes = [
+export const routeNodes = [
   {
     number: "01",
     title: "Техника",
@@ -77,11 +77,15 @@ export const diagnosticNodes = [
   },
 ];
 
+export const diagnosticNodes = routeNodes;
+
 export const productSystem = {
   tag: "03 / 06 / Product Routes",
   headline: "Четыре комнаты вместо хаотичного обучения.",
   copy:
     "В холле маршрутов выбирается не курс, а направление системы. Открой комнату, посмотри сигналы, пойми первый фикс и только потом переходи в живое пространство Telegram.",
+  routeMessage:
+    "Один из этих маршрутов сейчас ближе к твоей ситуации.\nВыбери комнату, которая точнее всего описывает текущий участок роста.",
   diagnosticMessage:
     "Один из этих маршрутов сейчас ближе к твоей ситуации.\nВыбери комнату, которая точнее всего описывает текущий участок роста.",
 };
@@ -95,9 +99,6 @@ export const routeHall = {
 };
 
 export const productRoutes = [
-  // ROUTE: TECHNIQUE
-  // Purpose: техника как точность, скорость, чистота, контроль материалов, архитектура и качество.
-  // Do not: salon pink, stock manicure glam, cute icons.
   {
     id: "technique",
     articleId: "route-technique",
@@ -111,9 +112,6 @@ export const productRoutes = [
     cta: "РАЗОБРАТЬ ТЕХНИКУ →",
     image: "images/product-technique-placeholder.svg",
   },
-  // ROUTE: CLIENT FLOW
-  // Purpose: клиентский поток как путь от видимости к записи.
-  // Do not: SaaS dashboard, fake metrics, traffic-hack hype.
   {
     id: "client-flow",
     articleId: "route-client-flow",
@@ -127,9 +125,6 @@ export const productRoutes = [
     cta: "НАЙТИ ТОЧКУ СЛИВА →",
     image: "images/product-client-flow-placeholder.svg",
   },
-  // ROUTE: INDEPENDENCE
-  // Purpose: выход из найма как переход из чужой системы в собственную профессиональную траекторию.
-  // Do not: girlboss cliches, beach laptop, motivational freedom imagery.
   {
     id: "independence",
     articleId: "route-independence",
@@ -143,9 +138,6 @@ export const productRoutes = [
     cta: "СОБРАТЬ ВЫХОД →",
     image: "images/product-independence-placeholder.svg",
   },
-  // ROUTE: MENTORSHIP
-  // Purpose: личная корректировка как внешний взгляд, маршрут и контроль внедрения.
-  // Do not: webinar coaching, smiling stock coach, influencer luxury.
   {
     id: "mentorship",
     articleId: "route-mentorship",
@@ -196,7 +188,7 @@ export const routeRooms = {
       "маршрут начинается с первого узла, а не с полного курса по всему подряд",
       "после входа можно выбрать, нужна ли техника, личная корректировка или другой маршрут",
     ],
-    visualDirection: "холодная стерильная лаборатория, бетон, металл, процедурный свет, макро рук и материалов",
+    visualDirection: "тёмная стерильная лаборатория, металл, процедурный свет, макро рук и материалов",
     cta: "ЗАЙТИ В TELEGRAM С ТЕХНИКОЙ →",
     source: "route_technique_room_cta",
   },
@@ -241,7 +233,7 @@ export const routeRooms = {
   independence: {
     roomCode: "ROOM 03 / INDEPENDENCE",
     roomName: "Переходная комната выхода",
-    atmosphere: "бетонный коридор / private exit / свет из проёма / контроль риска",
+    atmosphere: "тёмный переход / private exit / свет из проёма / контроль риска",
     headline: "Выход из найма ломается, когда свобода начинается без системы.",
     lead:
       "Эта комната разбирает переход: свой кабинет, запись, график, цена, финансовый риск, границы и первый безопасный шаг без резкого прыжка.",
@@ -272,7 +264,7 @@ export const routeRooms = {
       "маршрут нужен до выхода, чтобы не переносить хаос в свой кабинет",
       "первый шаг выбирается по текущей точке риска: деньги, запись, график или границы",
     ],
-    visualDirection: "переходная комната, бетонная дверь, private exit, свет из проёма, без girlboss клише",
+    visualDirection: "тёмная переходная комната, private exit, свет из проёма, без girlboss клише",
     cta: "СОБРАТЬ ВЫХОД В TELEGRAM →",
     source: "route_independence_room_cta",
   },
@@ -310,7 +302,7 @@ export const routeRooms = {
       "можно определить, нужен ли маршрут или личная корректировка",
       "следующий шаг строится от реальной точки А, а не от общего обещания роста",
     ],
-    visualDirection: "закрытый кабинет, тёмный интерьер, стол, аналитическая комната, один направленный свет",
+    visualDirection: "закрытый кабинет, тёмный интерьер, аналитическая комната, один направленный свет",
     cta: "ПОЙТИ С РАЗБОРОМ В TELEGRAM →",
     source: "route_mentorship_room_cta",
   },
