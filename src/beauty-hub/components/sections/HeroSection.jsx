@@ -48,7 +48,7 @@ export function HeroSection() {
 
         <Reveal delay={0.06} className="border border-dusty/16 bg-graphite/70">
           <div className="border-b border-dusty/12 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.16em] text-mineral">
-            Индекс системы / 04 узла
+            Индекс системы / 04 комнаты
           </div>
           <div className="divide-y divide-dusty/10">
             {diagnosticNodes.map((node) => (
@@ -62,9 +62,9 @@ export function HeroSection() {
             ))}
           </div>
           <div className="border-t border-copper/45 bg-ivory p-4 text-graphite">
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">Стартовая диагностика</p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">Route Finder</p>
             <p className="mt-4 text-sm leading-6">
-              Показывает, какой узел сейчас держит рост: техника, клиенты, найм или отсутствие личной корректировки.
+              Если не понимаешь, с чего начать — выбери ближайший маршрут через короткий помощник.
             </p>
           </div>
         </Reveal>
