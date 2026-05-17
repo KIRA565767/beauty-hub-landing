@@ -30,7 +30,7 @@ export function HeroSection() {
               <Button href={getTelegramStartLink("hero_primary")} haptic source="hero_primary">
                 {hero.primaryCta}
               </Button>
-              <Button href="#products" variant="secondary" source="hero_secondary">
+              <Button href="#/routes" variant="secondary" source="hero_secondary">
                 {hero.secondaryCta}
               </Button>
             </div>
@@ -38,7 +38,7 @@ export function HeroSection() {
 
           <div className="grid max-w-[820px] border-y border-dusty/16 bg-graphite/58 text-[11px] uppercase tracking-[0.14em] text-mineral sm:grid-cols-3">
             {diagnosticNodes.slice(0, 3).map((node) => (
-              <a key={node.number} href={node.anchor || "#products"} className="grid grid-cols-[38px_1fr] gap-3 border-b border-dusty/10 px-4 py-3 transition hover:text-copper sm:border-b-0 sm:border-r sm:border-dusty/10 sm:last:border-r-0">
+              <a key={node.number} href={node.path} className="grid grid-cols-[38px_1fr] gap-3 border-b border-dusty/10 px-4 py-3 transition hover:text-copper sm:border-b-0 sm:border-r sm:border-dusty/10 sm:last:border-r-0">
                 <span className="font-mono text-copper">{node.number}</span>
                 <span>{node.title}</span>
               </a>
@@ -52,7 +52,7 @@ export function HeroSection() {
           </div>
           <div className="divide-y divide-dusty/10">
             {diagnosticNodes.map((node) => (
-              <a key={node.number} href={node.anchor || "#products"} className="group grid min-h-14 grid-cols-[42px_1fr] gap-3 px-5 py-3 transition hover:bg-copper/10">
+              <a key={node.number} href={node.path} className="group grid min-h-14 grid-cols-[42px_1fr] gap-3 px-5 py-3 transition hover:bg-copper/10">
                 <span className="font-mono text-xs text-copper">{node.number}</span>
                 <span>
                   <span className="block font-display text-2xl font-semibold leading-none text-dusty group-hover:text-copper">{node.title}</span>
