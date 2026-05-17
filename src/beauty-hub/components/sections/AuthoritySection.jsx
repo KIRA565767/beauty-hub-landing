@@ -4,7 +4,7 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function AuthoritySection() {
   return (
-    <section id="authority" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+    <section id="authority" className="editorial-concrete min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
       <div className="mx-auto grid max-w-[1240px] gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
         <Reveal className="border-y border-dusty/16 bg-graphite/72 p-5 md:p-7">
           <SectionLabel>{authority.tag}</SectionLabel>
