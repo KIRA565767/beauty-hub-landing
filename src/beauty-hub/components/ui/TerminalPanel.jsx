@@ -13,7 +13,7 @@ export function TerminalPanel({ className = "" }) {
           {productRoutes.map((route) => (
             <a
               key={route.id}
-              href={route.anchor}
+              href={route.path}
               className="grid min-h-11 grid-cols-[38px_1fr] items-center gap-3 border-t border-dusty/10 py-3 text-left transition hover:text-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
             >
               <span className="font-mono text-xs text-copper">{route.number}</span>
