@@ -1,4 +1,4 @@
-import { productRoutes, productSystem } from "../../content/landing";
+import { diagnosticNodes, productRoutes, productSystem, routeRooms } from "../../content/landing";
 import { Reveal } from "../ReferenceMotion";
 import { SectionLabel } from "../ui/SectionLabel";
 import { TerminalPanel } from "../ui/TerminalPanel";
@@ -31,8 +31,8 @@ export function ProductSystemSection() {
 
         <div className="-mx-4 mt-8 overflow-x-auto px-4 pb-4 md:-mx-8 md:px-8 lg:-mx-10 lg:px-10 product-snap snap-x snap-mandatory">
           <div className="flex gap-4 pr-4 md:gap-5 md:pr-8 lg:pr-10">
-            {productRoutes.map((route) => (
-              <ProductCoverCard key={route.id} route={route} />
+            {productRoutes.map((route, index) => (
+              <ProductCoverCard key={route.id} route={route} node={diagnosticNodes[index]} room={routeRooms[route.id]} />
             ))}
           </div>
         </div>
