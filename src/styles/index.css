@@ -75,9 +75,12 @@ button:disabled {
 
 .editorial-concrete {
   background-color: #15110D;
-  background-image: url("../beauty-hub/assets/concrete-bg.jpg");
+  background-image:
+    linear-gradient(90deg, rgba(243, 234, 223, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(243, 234, 223, 0.03) 1px, transparent 1px),
+    linear-gradient(118deg, rgba(11, 9, 7, 0.96), rgba(21, 17, 13, 0.94));
   background-position: center top;
-  background-size: cover;
+  background-size: 92px 92px, 92px 92px, cover;
 }
 
 .hero-hard-light {
