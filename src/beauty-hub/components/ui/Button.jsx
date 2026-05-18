@@ -6,7 +6,7 @@ const variants = {
   primary: "bg-orange text-graphite hover:bg-copper active:bg-copper focus-visible:outline-orange",
   secondary:
     "border border-dusty/30 text-dusty hover:border-copper hover:text-copper active:border-orange focus-visible:outline-copper",
-  dark: "bg-graphite text-dusty hover:bg-concrete active:bg-concrete focus-visible:outline-copper",
+  dark: "bg-graphite text-dusty hover:bg-[#222224] active:bg-[#222224] focus-visible:outline-copper",
 };
 
 export function Button({
@@ -40,11 +40,11 @@ export function Button({
     <a
       href={href}
       onClick={handleClick}
-      className={`inline-flex min-h-12 items-center justify-center gap-2 px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${variants[variant]} ${className}`}
+      className={`inline-flex min-h-12 max-w-full items-center justify-center gap-2 px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.08em] transition duration-200 ease-out hover:[&>svg]:translate-x-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${variants[variant]} ${className}`}
       {...props}
     >
-      <span>{children}</span>
-      {hasTextArrow ? null : <ArrowRight aria-hidden="true" size={18} strokeWidth={2} />}
+      <span className="min-w-0">{children}</span>
+      {hasTextArrow ? null : <ArrowRight aria-hidden="true" size={18} strokeWidth={2} className="shrink-0 transition-transform duration-200 ease-out" />}
     </a>
   );
 }
