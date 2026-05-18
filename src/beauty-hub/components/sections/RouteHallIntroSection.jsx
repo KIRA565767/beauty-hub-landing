@@ -4,8 +4,8 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function RouteHallIntroSection() {
   return (
-    <section className="editorial-concrete px-4 pb-8 pt-24 text-dusty md:px-8 md:pb-12 md:pt-28 lg:px-10">
-      <div className="mx-auto max-w-[1440px] border-t border-dusty/18 pt-8">
+    <section className="editorial-graphite editorial-grain px-4 pb-8 pt-24 text-dusty md:px-8 md:pb-12 md:pt-28 lg:px-10">
+      <div className="relative z-10 mx-auto max-w-[1440px] border-t border-dusty/18 pt-8">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(360px,0.55fr)] lg:items-end">
           <Reveal>
             <SectionLabel>{routeHall.tag}</SectionLabel>
@@ -15,8 +15,8 @@ export function RouteHallIntroSection() {
             <p className="mt-6 max-w-[720px] text-base leading-8 text-mineral md:text-lg md:leading-9">{routeHall.copy}</p>
           </Reveal>
 
-          <Reveal delay={0.04} className="border-y border-dusty/16 bg-graphite/72 p-5 md:p-6">
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">private building map</p>
+          <Reveal delay={0.04} className="private-pass orange-rim-light p-5 md:p-6">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">private route map</p>
             <div className="mt-6 space-y-3">
               {productRoutes.map((route) => {
                 const room = routeRooms[route.id];
