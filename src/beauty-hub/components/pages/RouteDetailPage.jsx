@@ -126,6 +126,12 @@ export function RouteDetailPage({ route, node }) {
 
   const telegramHref = getTelegramStartLink(room.source);
   const otherRoutes = productRoutes.filter((item) => item.id !== route.id);
+  const isTechniqueRoom = route.id === "technique";
+  const productPurchase = isTechniqueRoom ? room.productPurchase : null;
+  const tribute = isTechniqueRoom ? room.tribute : null;
+  const tributeUrl = productPurchase?.tributeUrl || tribute?.url || "";
+  const purchaseHref = tributeUrl || telegramHref;
+  const purchaseIsExternal = Boolean(tributeUrl);
 
   return (
     <section className="editorial-graphite editorial-grain min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
@@ -221,6 +227,63 @@ export function RouteDetailPage({ route, node }) {
               {room.paidNote}
             </p>
           </RoomBlock>
+
+          {isTechniqueRoom && (productPurchase || tribute) ? (
+            <RoomBlock
+              code="product access"
+              title={productPurchase?.title || "Курс по технике — отдельный вход в маршрут."}
+            >
+              <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-start">
+                <div className="private-pass orange-rim-light p-5 md:p-7">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">
+                    PRODUCT ACCESS / TECHNIQUE COURSE
+                  </p>
+                  <h3 className="mt-5 max-w-[760px] font-display text-3xl font-semibold leading-tight text-dusty md:text-5xl">
+                    {productPurchase?.headline || productPurchase?.title || "Курс по технике — отдельный вход в маршрут."}
+                  </h3>
+                  <p className="mt-5 max-w-[760px] text-base leading-8 text-mineral md:text-lg md:leading-9">
+                    {productPurchase?.text || productPurchase?.copy}
+                  </p>
+
+                  {productPurchase?.bullets?.length ? (
+                    <div className="mt-7 grid gap-3 md:grid-cols-3">
+                      {productPurchase.bullets.map((item, index) => (
+                        <RoomBulletCard key={item} index={index}>
+                          {item}
+                        </RoomBulletCard>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                    <Button
+                      href={purchaseHref}
+                      haptic={!purchaseIsExternal}
+                      source={productPurchase?.source || room.source}
+                      target={purchaseIsExternal ? "_blank" : undefined}
+                      rel={purchaseIsExternal ? "noreferrer" : undefined}
+                    >
+                      {tributeUrl ? productPurchase?.primaryCta || "ОПЛАТИТЬ ДОСТУП ЧЕРЕЗ TRIBUTE →" : productPurchase?.primaryCta}
+                    </Button>
+                    <Button href={telegramHref} variant="secondary" haptic source={room.source}>
+                      {productPurchase?.secondaryCta || "ПРОДОЛЖИТЬ МАРШРУТ В TELEGRAM →"}
+                    </Button>
+                  </div>
+                </div>
+
+                {tribute ? (
+                  <div className="ivory-material orange-rim-light p-5 md:p-7">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">{tribute.tag}</p>
+                    <h3 className="mt-5 font-display text-3xl font-semibold leading-tight text-graphite md:text-4xl">
+                      {tribute.headline}
+                    </h3>
+                    <p className="mt-5 text-base leading-8 text-graphite/84">{tribute.copy}</p>
+                    {tribute.note ? <p className="mt-5 border-t border-graphite/14 pt-5 text-sm leading-7 text-graphite/72">{tribute.note}</p> : null}
+                  </div>
+                ) : null}
+              </div>
+            </RoomBlock>
+          ) : null}
 
           <RoomBlock code="next step" title={room.resultTitle}>
             <div className="space-y-3">

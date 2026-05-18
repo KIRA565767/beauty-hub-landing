@@ -24,6 +24,7 @@ export function Button({
   const pulse = useHapticFeedback(10);
   const hasTextArrow = typeof children === "string" && children.trim().endsWith("→");
   const label = typeof children === "string" ? children : undefined;
+  const classes = `inline-flex min-h-12 max-w-full items-center justify-center gap-2 px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.08em] transition duration-200 ease-out hover:[&>svg]:translate-x-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${variants[variant]} ${className}`;
 
   function handleClick(event) {
     if (haptic) pulse();
@@ -36,15 +37,23 @@ export function Button({
     onClick?.(event);
   }
 
+  if (href) {
+    return (
+      <a href={href} onClick={handleClick} className={classes} {...props}>
+        <span className="min-w-0">{children}</span>
+        {hasTextArrow ? null : (
+          <ArrowRight aria-hidden="true" size={18} strokeWidth={2} className="shrink-0 transition-transform duration-200 ease-out" />
+        )}
+      </a>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      onClick={handleClick}
-      className={`inline-flex min-h-12 max-w-full items-center justify-center gap-2 px-5 py-3 text-center text-sm font-semibold uppercase tracking-[0.08em] transition duration-200 ease-out hover:[&>svg]:translate-x-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${variants[variant]} ${className}`}
-      {...props}
-    >
+    <button type="button" onClick={handleClick} className={classes} {...props}>
       <span className="min-w-0">{children}</span>
-      {hasTextArrow ? null : <ArrowRight aria-hidden="true" size={18} strokeWidth={2} className="shrink-0 transition-transform duration-200 ease-out" />}
-    </a>
+      {hasTextArrow ? null : (
+        <ArrowRight aria-hidden="true" size={18} strokeWidth={2} className="shrink-0 transition-transform duration-200 ease-out" />
+      )}
+    </button>
   );
 }
