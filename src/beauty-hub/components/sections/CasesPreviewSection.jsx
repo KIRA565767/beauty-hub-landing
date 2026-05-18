@@ -42,7 +42,7 @@ export function CasesPreviewSection() {
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-5 xl:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {casesPreview.map((item, index) => (
             <CaseExtractCard key={item.id} item={item} index={index} />
           ))}
