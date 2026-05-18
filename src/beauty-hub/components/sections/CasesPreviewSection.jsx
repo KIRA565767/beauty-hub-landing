@@ -34,13 +34,13 @@ export function CasesPreviewSection() {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-4 xl:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {casesPreview.map((item, index) => (
             <CaseExtractCard key={item.id} item={item} index={index} />
           ))}
         </div>
 
-        <Reveal className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        <Reveal className="mt-12 flex flex-col gap-3 border-t border-dusty/10 pt-6 sm:flex-row sm:flex-wrap sm:items-center">
           <Button href="#/routes" source="cases_preview_routes">
             СМОТРЕТЬ МАРШРУТЫ →
           </Button>
