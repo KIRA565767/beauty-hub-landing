@@ -51,6 +51,15 @@ function RoomSignalCard({ index, children }) {
   );
 }
 
+function RoomBulletCard({ index, children }) {
+  return (
+    <div className="private-pass p-5 md:p-6">
+      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">node {String(index + 1).padStart(2, "0")}</p>
+      <p className="mt-4 text-base leading-8 text-mineral">{children}</p>
+    </div>
+  );
+}
+
 function RoomIndexPanel({ route, room, otherRoutes, telegramHref }) {
   return (
     <Reveal delay={0.05} className="lg:sticky lg:top-24">
@@ -157,6 +166,10 @@ export function RouteDetailPage({ route, node }) {
             </div>
           </RoomBlock>
 
+          <RoomBlock code="pain" title={room.painTitle}>
+            <p className="max-w-[880px] text-base leading-8 text-mineral md:text-lg md:leading-9">{room.pain}</p>
+          </RoomBlock>
+
           <RoomBlock code="system breakdown" title={room.breakdownTitle}>
             <div className="space-y-3">
               {room.breakdown.map((item, index) => (
@@ -166,6 +179,26 @@ export function RouteDetailPage({ route, node }) {
                   </span>
                   <p className="text-base leading-8 text-mineral md:text-lg">{item}</p>
                 </div>
+              ))}
+            </div>
+          </RoomBlock>
+
+          <RoomBlock code="what it fixes" title={room.fixesTitle}>
+            <div className="grid gap-3 md:grid-cols-3">
+              {room.fixes.map((item, index) => (
+                <RoomBulletCard key={item} index={index}>
+                  {item}
+                </RoomBulletCard>
+              ))}
+            </div>
+          </RoomBlock>
+
+          <RoomBlock code="product substance" title={room.substanceTitle}>
+            <div className="grid gap-3 md:grid-cols-3">
+              {room.substance.map((item, index) => (
+                <RoomBulletCard key={item} index={index}>
+                  {item}
+                </RoomBulletCard>
               ))}
             </div>
           </RoomBlock>
@@ -181,6 +214,12 @@ export function RouteDetailPage({ route, node }) {
                 </div>
               ))}
             </div>
+          </RoomBlock>
+
+          <RoomBlock code="future paid product" title={room.paidTitle}>
+            <p className="max-w-[880px] border-l border-copper/55 bg-graphite/45 py-4 pl-5 text-base leading-8 text-mineral md:text-lg">
+              {room.paidNote}
+            </p>
           </RoomBlock>
 
           <RoomBlock code="next step" title={room.resultTitle}>
