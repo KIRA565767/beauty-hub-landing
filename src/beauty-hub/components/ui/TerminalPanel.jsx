@@ -2,9 +2,9 @@ import { productRoutes, routeRooms, terminalPanel } from "../../content/landing"
 
 export function TerminalPanel({ className = "" }) {
   return (
-    <aside className={`border border-dusty/14 bg-graphite/72 text-dusty ${className}`}>
+    <aside className={`private-pass orange-rim-light text-dusty ${className}`}>
       <div className="border-b border-dusty/12 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-copper">
-        {terminalPanel.label}
+        ROUTE ACCESS
       </div>
       <div className="p-5 md:p-6">
         <h3 className="font-display text-3xl font-semibold leading-none">{terminalPanel.title}</h3>
