@@ -17,7 +17,7 @@ export default {
         mono: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       boxShadow: {
-        terminal: "0 28px 120px rgba(22, 22, 24, 0.52)",
+        editorial: "0 28px 90px rgba(12, 12, 13, 0.42)",
       },
     },
   },
