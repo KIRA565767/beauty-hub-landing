@@ -233,12 +233,22 @@ export function RouteDetailPage({ route, node }) {
               code="product access"
               title={productPurchase?.title || "Курс по технике — отдельный вход в маршрут."}
             >
-              <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-start">
-                <div className="private-pass orange-rim-light p-5 md:p-7">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">
-                    PRODUCT ACCESS / TECHNIQUE COURSE
-                  </p>
-                  <h3 className="mt-5 max-w-[760px] font-display text-3xl font-semibold leading-tight text-dusty md:text-5xl">
+              <div className="grid gap-4 xl:grid-cols-[minmax(0,1.2fr)_minmax(280px,0.8fr)] xl:items-start">
+                <div className="relative overflow-hidden private-pass orange-rim-light p-5 md:p-7">
+                  <div className="absolute bottom-7 left-0 top-7 w-px bg-gradient-to-b from-copper/90 via-copper/35 to-transparent" />
+                  <div className="flex items-start justify-between gap-4 border-b border-dusty/10 pb-5">
+                    <div className="min-w-0 pl-4">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">
+                        PRODUCT ACCESS / TECHNIQUE COURSE
+                      </p>
+                      <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-mineral">
+                        {tributeUrl ? "private access attached" : "private access continues through Telegram first"}
+                      </p>
+                    </div>
+                    <span className="font-display text-5xl leading-none text-dusty/16 md:text-6xl">01</span>
+                  </div>
+
+                  <h3 className="mt-6 max-w-[760px] font-display text-3xl font-semibold leading-tight text-dusty md:text-5xl">
                     {productPurchase?.headline || productPurchase?.title || "Курс по технике — отдельный вход в маршрут."}
                   </h3>
                   <p className="mt-5 max-w-[760px] text-base leading-8 text-mineral md:text-lg md:leading-9">
@@ -246,39 +256,62 @@ export function RouteDetailPage({ route, node }) {
                   </p>
 
                   {productPurchase?.bullets?.length ? (
-                    <div className="mt-7 grid gap-3 md:grid-cols-3">
+                    <div className="mt-8 border-t border-dusty/10">
                       {productPurchase.bullets.map((item, index) => (
-                        <RoomBulletCard key={item} index={index}>
-                          {item}
-                        </RoomBulletCard>
+                        <div
+                          key={item}
+                          className="grid gap-3 border-b border-dusty/10 py-4 md:grid-cols-[44px_minmax(0,1fr)] md:gap-5"
+                        >
+                          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">
+                            {String(index + 1).padStart(2, "0")}
+                          </p>
+                          <p className="text-sm leading-7 text-mineral md:text-[15px]">{item}</p>
+                        </div>
                       ))}
                     </div>
                   ) : null}
 
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                    <Button
-                      href={purchaseHref}
-                      haptic={!purchaseIsExternal}
-                      source={productPurchase?.source || room.source}
-                      target={purchaseIsExternal ? "_blank" : undefined}
-                      rel={purchaseIsExternal ? "noreferrer" : undefined}
-                    >
-                      {tributeUrl ? productPurchase?.primaryCta || "ОПЛАТИТЬ ДОСТУП ЧЕРЕЗ TRIBUTE →" : productPurchase?.primaryCta}
-                    </Button>
-                    <Button href={telegramHref} variant="secondary" haptic source={room.source}>
-                      {productPurchase?.secondaryCta || "ПРОДОЛЖИТЬ МАРШРУТ В TELEGRAM →"}
-                    </Button>
+                  <div className="mt-8 border-t border-dusty/10 pt-6">
+                    <p className="max-w-[680px] text-sm leading-7 text-mineral">
+                      {tributeUrl
+                        ? "Если вход уже подключён, доступ открывается как отдельный шаг после ясной диагностики узла."
+                        : "Пока Tribute ещё не подключён, первый вход в продукт остаётся через Telegram: сначала фиксируется технический узел, потом открывается следующий формат доступа."}
+                    </p>
+
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                      <Button
+                        href={purchaseHref}
+                        haptic={!purchaseIsExternal}
+                        source={productPurchase?.source || room.source}
+                        target={purchaseIsExternal ? "_blank" : undefined}
+                        rel={purchaseIsExternal ? "noreferrer" : undefined}
+                      >
+                        {tributeUrl
+                          ? productPurchase?.primaryCta || "ОПЛАТИТЬ ДОСТУП ЧЕРЕЗ TRIBUTE →"
+                          : productPurchase?.primaryCta}
+                      </Button>
+                      {tributeUrl ? (
+                        <Button href={telegramHref} variant="secondary" haptic source={room.source}>
+                          {productPurchase?.secondaryCta || "ПРОДОЛЖИТЬ МАРШРУТ В TELEGRAM →"}
+                        </Button>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
 
                 {tribute ? (
-                  <div className="ivory-material orange-rim-light p-5 md:p-7">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-concrete">{tribute.tag}</p>
-                    <h3 className="mt-5 font-display text-3xl font-semibold leading-tight text-graphite md:text-4xl">
+                  <div className="private-pass p-5 md:p-6">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-copper">{tribute.tag}</p>
+                    <h3 className="mt-5 max-w-[14ch] font-display text-3xl font-semibold leading-tight text-dusty md:text-4xl">
                       {tribute.headline}
                     </h3>
-                    <p className="mt-5 text-base leading-8 text-graphite/84">{tribute.copy}</p>
-                    {tribute.note ? <p className="mt-5 border-t border-graphite/14 pt-5 text-sm leading-7 text-graphite/72">{tribute.note}</p> : null}
+                    <p className="mt-5 text-sm leading-7 text-mineral md:text-[15px]">{tribute.copy}</p>
+                    {!tributeUrl ? (
+                      <p className="mt-5 border-t border-dusty/10 pt-5 text-sm leading-7 text-mineral">
+                        Оплата здесь не имитируется. Пока отдельный Tribute-вход не открыт, маршрут продолжается через Telegram и стартовую диагностику.
+                      </p>
+                    ) : null}
+                    {tribute.note ? <p className="mt-5 border-t border-dusty/10 pt-5 text-sm leading-7 text-mineral">{tribute.note}</p> : null}
                   </div>
                 ) : null}
               </div>
