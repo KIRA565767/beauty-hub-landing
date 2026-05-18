@@ -83,7 +83,7 @@ export function StickyCTA() {
       } transition duration-300`}
       style={{ bottom: "calc(20px + env(safe-area-inset-bottom))" }}
     >
-      <Button href={getTelegramStartLink(ctaSource)} haptic source={ctaSource} className="w-full shadow-terminal">
+      <Button href={getTelegramStartLink(ctaSource)} haptic source={ctaSource} className="w-full shadow-editorial">
         {activeRoom ? "ВОЙТИ В TELEGRAM →" : "ПОЛУЧИТЬ МАРШРУТ →"}
       </Button>
     </div>

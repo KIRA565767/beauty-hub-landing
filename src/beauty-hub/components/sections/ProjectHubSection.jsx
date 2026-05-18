@@ -4,8 +4,8 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function ProjectHubSection() {
   return (
-    <section className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
-      <div className="mx-auto max-w-[1320px]">
+    <section className="editorial-graphite editorial-grain px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+      <div className="relative z-10 mx-auto max-w-[1320px]">
         <Reveal className="border-t border-dusty/18 pt-8">
           <SectionLabel>{projectHub.tag}</SectionLabel>
           <h2 className="mt-6 max-w-[780px] font-display text-4xl font-semibold leading-[1.02] md:text-6xl">
@@ -19,7 +19,7 @@ export function ProjectHubSection() {
             <Reveal key={entry.href} delay={index * 0.03}>
               <a
                 href={entry.href}
-                className="group block min-h-[180px] border-y border-dusty/16 bg-graphite/72 p-5 text-dusty transition hover:border-copper hover:bg-concrete/84 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper md:p-6"
+                className="group private-pass block min-h-[180px] p-5 text-dusty transition hover:border-copper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper md:p-6"
               >
                 <div className="flex items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-[0.16em] text-copper">
                   <span>{entry.number}</span>

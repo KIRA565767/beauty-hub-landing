@@ -8,7 +8,7 @@ import { RoutesPage } from "./components/pages/RoutesPage";
 import { StartPage } from "./components/pages/StartPage";
 import { TelegramPage } from "./components/pages/TelegramPage";
 import { StickyCTA } from "./components/ui/StickyCTA";
-import { diagnosticNodes, meta, productRoutes } from "./content/landing";
+import { meta, productRoutes, routeNodes } from "./content/landing";
 import { useHashRoute } from "./hooks/useHashRoute";
 import { useHashScroll } from "./hooks/useHashScroll";
 
@@ -31,7 +31,7 @@ function getRouteDetail(routePath) {
 
   return {
     route,
-    node: diagnosticNodes[index],
+    node: routeNodes[index],
   };
 }
 

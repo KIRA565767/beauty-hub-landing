@@ -6,9 +6,9 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 export function FinalConversionSection() {
   return (
-    <section id="final-conversion" className="editorial-concrete px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
-      <Reveal className="mx-auto max-w-[1180px] border-y border-dusty/16 bg-graphite/74">
-        <div className="bg-graphite/90 p-6 md:p-9 lg:p-10">
+    <section id="final-conversion" className="editorial-graphite editorial-grain px-4 py-16 text-dusty md:px-8 md:py-24 lg:px-10">
+      <Reveal className="relative z-10 mx-auto max-w-[1180px] private-pass orange-rim-light">
+        <div className="p-6 md:p-9 lg:p-10">
           <SectionLabel>{finalConversion.tag}</SectionLabel>
           <h2 className="mt-6 max-w-[720px] font-display text-4xl font-semibold leading-[1.02] md:text-6xl">
             {finalConversion.headline}
