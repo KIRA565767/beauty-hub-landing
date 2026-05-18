@@ -46,7 +46,7 @@ export function HeroSection() {
               <span>04 ROUTES</span>
             </div>
 
-            <div className="mt-16 md:mt-32">
+            <div className="mt-16 pb-40 md:mt-32 md:pb-44">
               <p className="font-display text-4xl font-semibold leading-none text-dusty md:text-6xl">
                 BEAUTY HUB
               </p>
