@@ -6,10 +6,9 @@ import { SectionLabel } from "../ui/SectionLabel";
 
 function RoomVisual({ room }) {
   return (
-    <div className="relative overflow-hidden border-y border-dusty/16 bg-graphite/78 p-5 md:p-7">
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(239,232,220,0.06)_1px,transparent_1px),linear-gradient(180deg,rgba(239,232,220,0.05)_1px,transparent_1px)] bg-[size:46px_46px] opacity-35" />
+    <div className="relative overflow-hidden private-pass orange-rim-light p-5 md:p-7">
       <div className="absolute left-0 top-0 h-full w-[3px] bg-copper" />
-      <div className="relative min-h-[280px] border border-dusty/10 bg-concrete/80 p-5 md:min-h-[360px] md:p-7">
+      <div className="relative min-h-[280px] graphite-surface p-5 md:min-h-[360px] md:p-7">
         <div className="flex items-start justify-between gap-5 font-mono text-[10px] uppercase tracking-[0.16em] text-mineral">
           <span>PRIVATE ACCESS</span>
           <span>{room.roomCode}</span>
@@ -43,7 +42,7 @@ function RoomBlock({ code, title, children }) {
 
 function RoomSignalCard({ index, children }) {
   return (
-    <div className="border-y border-dusty/12 bg-graphite/58 p-5 transition duration-300 hover:border-copper/60 md:p-6">
+    <div className="private-pass p-5 transition duration-300 hover:border-copper/60 md:p-6">
       <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-copper">
         signal {String(index + 1).padStart(2, "0")}
       </p>
@@ -55,7 +54,7 @@ function RoomSignalCard({ index, children }) {
 function RoomIndexPanel({ route, room, otherRoutes, telegramHref }) {
   return (
     <Reveal delay={0.05} className="lg:sticky lg:top-24">
-      <aside className="border-y border-dusty/16 bg-graphite/72 p-5 md:p-6">
+      <aside className="private-pass orange-rim-light p-5 md:p-6">
         <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">room index</p>
         <div className="mt-5 border-y border-dusty/10 py-5">
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-mineral">{room.roomCode}</p>
@@ -101,8 +100,8 @@ export function RouteDetailPage({ route, node }) {
 
   if (!route || !node || !room) {
     return (
-      <section className="editorial-concrete min-h-svh px-4 pb-16 pt-28 text-dusty md:px-8 lg:px-10">
-        <div className="mx-auto max-w-[760px] border-t border-dusty/18 pt-8">
+      <section className="editorial-graphite editorial-grain min-h-svh px-4 pb-16 pt-28 text-dusty md:px-8 lg:px-10">
+        <div className="relative z-10 mx-auto max-w-[760px] border-t border-dusty/18 pt-8">
           <SectionLabel>route not found</SectionLabel>
           <h1 className="mt-6 font-display text-5xl font-semibold leading-none md:text-7xl">Комната не найдена.</h1>
           <p className="mt-6 text-base leading-8 text-mineral">
@@ -120,8 +119,8 @@ export function RouteDetailPage({ route, node }) {
   const otherRoutes = productRoutes.filter((item) => item.id !== route.id);
 
   return (
-    <section className="editorial-concrete min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
-      <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start xl:grid-cols-[minmax(0,1fr)_400px]">
+    <section className="editorial-graphite editorial-grain min-h-svh px-4 pb-16 pt-24 text-dusty md:px-8 md:pb-24 md:pt-28 lg:px-10">
+      <div className="relative z-10 mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start xl:grid-cols-[minmax(0,1fr)_400px]">
         <div className="space-y-10 md:space-y-12">
           <Reveal className="border-t border-dusty/18 pt-8">
             <SectionLabel>{room.roomCode}</SectionLabel>
@@ -174,7 +173,7 @@ export function RouteDetailPage({ route, node }) {
           <RoomBlock code="first fix" title={room.firstFixTitle}>
             <div className="grid gap-3 md:grid-cols-2">
               {room.firstFix.map((item, index) => (
-                <div key={item} className="border-y border-dusty/12 bg-dusty/[0.03] p-5">
+                <div key={item} className="private-pass p-5">
                   <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-copper">
                     step {String(index + 1).padStart(2, "0")}
                   </p>
@@ -198,7 +197,7 @@ export function RouteDetailPage({ route, node }) {
         <RoomIndexPanel route={route} room={room} otherRoutes={otherRoutes} telegramHref={telegramHref} />
       </div>
 
-      <Reveal className="mx-auto mt-12 max-w-[1440px] border-t border-dusty/16 pt-8 md:mt-16 md:pt-10">
+      <Reveal className="relative z-10 mx-auto mt-12 max-w-[1440px] border-t border-dusty/16 pt-8 md:mt-16 md:pt-10">
         <div className="grid gap-6 md:grid-cols-[minmax(0,0.75fr)_auto] md:items-end">
           <div>
             <SectionLabel>final access</SectionLabel>
